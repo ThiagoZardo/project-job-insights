@@ -1,5 +1,16 @@
-# from src.brazilian_jobs import read_brazilian_file
+import pytest
+from src.brazilian_jobs import read_brazilian_file
 
 
-def test_brazilian_jobs():
-    pass
+@pytest.fixture
+def keys_english():
+    return {
+        "title": "Maquinista",
+        "salary": "2000",
+        "type": "trainee"
+    }
+
+
+def test_brazilian_jobs(keys_english):
+    response = read_brazilian_file('tests/mocks/brazilians_jobs.csv')
+    assert keys_english in response
