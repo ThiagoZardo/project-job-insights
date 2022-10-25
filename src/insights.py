@@ -65,7 +65,7 @@ def matches_salary_range(job, salary):
 
 
 def filter_by_salary_range(jobs, salary):
-    new_list = [count_ocurrences]
+    new_list = []
     for job in jobs:
         if matches_salary_range(job, salary):
             new_list.append(job)
